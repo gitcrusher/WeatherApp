@@ -88,39 +88,261 @@ class WeatherScreen extends StatelessWidget {
             ),
             Row(
               children: [
-                SizedBox(
-                  width: 100,
-                  child: Card(
-                    elevation: 6,
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Column(
-                        children: [
-                          Text(
-                            '03:00',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
+//first card ------------>
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
-                          const SizedBox(
-                            height: 8,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+//second card --------------->
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
-                          Icon(
-                            Icons.cloud,
-                            size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+//third card --------------->
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
-                          const SizedBox(
-                            height: 8,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+//fourth card --------------->
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
-                          Text(
-                            '300.12',
-                            style: TextStyle(),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+// fifth card --------------->
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+//sixth card --------------->
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+//seventh card --------------->
+
+                Card(
+                  elevation: 6,
+                  child: Container(
+                    width: 100,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
+                    child: Column(
+                      children: [
+                        Text(
+                          '03:00',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Icon(
+                          Icons.cloud,
+                          size: 32,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          '300.12',
+                          style: TextStyle(),
+                        ),
+                      ],
                     ),
                   ),
                 ),
