@@ -76,15 +76,55 @@ class WeatherScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Text(
-              'Weather Forecast',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            const SizedBox(
+              height: 20,
             ),
 
             //weather forecast cards -------->
 
-            Placeholder(
-              fallbackHeight: 150,
+            const Text(
+              'Weather Forecast',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 100,
+                  child: Card(
+                    elevation: 6,
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16)),
+                      child: Column(
+                        children: [
+                          Text(
+                            '03:00',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Icon(
+                            Icons.cloud,
+                            size: 32,
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            '300.12',
+                            style: TextStyle(),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
 
             //additional information -------->
