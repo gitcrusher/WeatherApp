@@ -86,276 +86,90 @@ class WeatherScreen extends StatelessWidget {
               'Weather Forecast',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            Row(
-              children: [
-//first card ------------>
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  //first card ------------>
 
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  //second card --------------->
 
-//second card --------------->
+                  HourlyForecastItems(),
 
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  //third card --------------->
 
-//third card --------------->
+                  HourlyForecastItems(),
 
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  //fourth card --------------->
 
-//fourth card --------------->
+                  HourlyForecastItems(),
 
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  // fifth card --------------->
 
-// fifth card --------------->
+                  HourlyForecastItems(),
 
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  //sixth card --------------->
 
-//sixth card --------------->
+                  HourlyForecastItems(),
 
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                  //seventh card --------------->
 
-//seventh card --------------->
-
-                Card(
-                  elevation: 6,
-                  child: Container(
-                    width: 100,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(16)),
-                    child: Column(
-                      children: [
-                        Text(
-                          '03:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 32,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          '300.12',
-                          style: TextStyle(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
+                  HourlyForecastItems()
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 16,
             ),
 
             //additional information -------->
-
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: const Placeholder(
-                fallbackHeight: 150,
+            const Text(
+              'Additional Information',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
               ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class HourlyForecastItems extends StatelessWidget {
+  const HourlyForecastItems({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 6,
+      child: Container(
+        width: 100,
+        padding: const EdgeInsets.all(8.0),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(16)),
+        child: Column(
+          children: [
+            Text(
+              '03:00',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Icon(
+              Icons.cloud,
+              size: 32,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              '300.12',
+              style: TextStyle(),
             ),
           ],
         ),
