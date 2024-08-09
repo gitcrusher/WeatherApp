@@ -41,8 +41,8 @@ class WeatherScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
+                    child: const Padding(
+                      padding: EdgeInsets.only(
                         top: 16,
                         bottom: 16,
                       ),
@@ -55,14 +55,14 @@ class WeatherScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 16,
                           ),
                           Icon(
                             Icons.cloud,
                             size: 64,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 16,
                           ),
                           Text(
@@ -88,39 +88,20 @@ class WeatherScreen extends StatelessWidget {
               'Weather Forecast',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SingleChildScrollView(
+            const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  //first card ------------>
-
-                  //second card --------------->
-
-                  HourlyForecastItems(),
-
-                  //third card --------------->
-
-                  HourlyForecastItems(),
-
-                  //fourth card --------------->
-
-                  HourlyForecastItems(),
-
-                  // fifth card --------------->
-
-                  HourlyForecastItems(),
-
-                  //sixth card --------------->
-
-                  HourlyForecastItems(),
-
-                  //seventh card --------------->
-
-                  HourlyForecastItems()
+                  HourlyForecastItems(time: '09:00', value: '301.17'),
+                  HourlyForecastItems(time: '12:00', value: '301.54'),
+                  HourlyForecastItems(time: '15:00', value: '301.11'),
+                  HourlyForecastItems(time: '18:00', value: '301.95'),
+                  HourlyForecastItems(time: '20:00', value: '301.03'),
+                  HourlyForecastItems(time: '22:00', value: '301.34')
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
 
@@ -132,13 +113,52 @@ class WeatherScreen extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                AdditionalInfoItems(),
-                AdditionalInfoItems(),
-                AdditionalInfoItems(),
-              ],
+            const SizedBox(
+              height: 16,
+            ),
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  AdditionalInfoItems(
+                    icon: Icons.water_drop,
+                    string: 'Humidity',
+                    data: '91',
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  AdditionalInfoItems(
+                    icon: Icons.air,
+                    string: 'Wind Speed',
+                    data: '7.67',
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  AdditionalInfoItems(
+                    icon: Icons.beach_access,
+                    string: 'Pressure',
+                    data: '1006',
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  AdditionalInfoItems(
+                    icon: Icons.sunny,
+                    string: 'Day Temp.',
+                    data: '34',
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  AdditionalInfoItems(
+                    icon: Icons.nightlight,
+                    string: 'Night Temp.',
+                    data: '23',
+                  ),
+                ],
+              ),
             )
           ],
         ),
