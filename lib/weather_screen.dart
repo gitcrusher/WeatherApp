@@ -154,7 +154,7 @@ class WeatherScreen extends StatelessWidget {
                   ),
                   AdditionalInfoItems(
                     icon: Icons.nightlight,
-                    string: 'Night Temp.',
+                    string: 'Night Temp',
                     data: '23',
                   ),
                 ],
