@@ -146,7 +146,7 @@ class WeatherScreen extends StatelessWidget {
                   ),
                   AdditionalInfoItems(
                     icon: Icons.sunny,
-                    string: 'Day Temp.',
+                    string: 'Day Temp',
                     data: '34',
                   ),
                   SizedBox(
