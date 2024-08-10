@@ -31,8 +31,8 @@ class HourlyForecastItems extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const Icon(
-              Icons.cloud,
+            Icon(
+              icons,
               size: 32,
             ),
             const SizedBox(
