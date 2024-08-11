@@ -64,7 +64,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
           final data = snapshot.data!;
 
-          final currentTemp = data['list'][0]['main']['temp'];
+          final currentWeatherData = data['list'][0];
+
+          final currentTemp = currentWeatherData['main']['temp'];
+          final currentSky = currentWeatherData['weather'][0]['main'];
+          final currentHumidity = currentWeatherData['main']['humidity'];
+          final currentWindSpeed = currentWeatherData['wind']['speed'];
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -102,14 +107,16 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 height: 16,
                               ),
                               Icon(
-                                Icons.cloud,
+                                currentSky == 'Clouds' || currentSky == 'Rain'
+                                    ? Icons.cloud
+                                    : Icons.sunny,
                                 size: 64,
                               ),
                               SizedBox(
                                 height: 16,
                               ),
                               Text(
-                                'Rain',
+                                currentSky,
                                 style: TextStyle(
                                   fontSize: 20,
                                 ),
@@ -183,14 +190,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 const SizedBox(
                   height: 16,
                 ),
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       AdditionalInfoItems(
                         icon: Icons.water_drop,
                         string: 'Humidity',
-                        data: '91',
+                        data: currentHumidity.toString(),
                       ),
                       SizedBox(
                         width: 30,
@@ -198,7 +205,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       AdditionalInfoItems(
                         icon: Icons.air,
                         string: 'Wind Speed',
-                        data: '7.67',
+                        data: '$currentWindSpeed',
                       ),
                       SizedBox(
                         width: 30,
