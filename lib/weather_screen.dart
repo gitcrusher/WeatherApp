@@ -1,5 +1,5 @@
+import 'dart:convert';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:weather_app/Hourly_forecast.dart';
 import 'package:weather_app/additional_info.dart';
@@ -14,6 +14,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  double temp = 0;
   @override
   void initState() {
     super.initState();
@@ -21,13 +22,25 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   Future getCurrentWeather() async {
-    String cityName = 'London';
-    final res = await http.get(
-      Uri.parse(
-        'https://http://api.openweathermap.org/data/2.5/weather?q=$cityName,uk&APPID=$openWeatherKey',
-      ),
-    );
-    print(res.body);
+    try {
+      String cityName = 'London';
+      final res = await http.get(
+        Uri.parse(
+          'https://api.openweathermap.org/data/2.5/forecast?q=$cityName,uk&APPID=$openWeatherKey',
+        ),
+      );
+      final data = jsonDecode(res.body);
+
+      if (int.parse(data['cod']) != 200) {
+        throw 'an eroor occured';
+      }
+
+      setState(() {
+        temp = data['list'][0]['main']['temp'];
+      });
+    } catch (e) {
+      throw e.toString();
+    }
   }
 
   @override
@@ -64,7 +77,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   borderRadius: BorderRadius.circular(16),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-                    child: const Padding(
+                    child: Padding(
                       padding: EdgeInsets.only(
                         top: 16,
                         bottom: 16,
@@ -72,7 +85,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       child: Column(
                         children: [
                           Text(
-                            '300°F',
+                            '$temp K',
                             style: TextStyle(
                               fontSize: 32,
                               fontWeight: FontWeight.bold,
