@@ -150,7 +150,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           time: data['list'][i + 1]['dt'].toString(),
                           icons: Icons.cloud,
                           temperature:
-                              data['list'][i + 1]['main']['temp'].toString(),
+                              data['list'][i + 1]['main']['temp'].toString() +
+                                  ' K',
                         ),
                     ],
                   ),
