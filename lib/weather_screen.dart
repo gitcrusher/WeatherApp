@@ -70,6 +70,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final currentSky = currentWeatherData['weather'][0]['main'];
           final currentHumidity = currentWeatherData['main']['humidity'];
           final currentWindSpeed = currentWeatherData['wind']['speed'];
+          final currentPressure = currentWeatherData['main']['pressure'];
+          final currentSeaLevel = currentWeatherData['main']['sea_level'];
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -213,15 +215,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       AdditionalInfoItems(
                         icon: Icons.beach_access,
                         string: 'Pressure',
-                        data: '1006',
+                        data: '$currentPressure',
                       ),
                       SizedBox(
                         width: 30,
                       ),
                       AdditionalInfoItems(
-                        icon: Icons.sunny,
-                        string: 'Day Temp',
-                        data: '34',
+                        icon: Icons.water,
+                        string: 'Sea Level',
+                        data: '$currentSeaLevel',
                       ),
                       SizedBox(
                         width: 30,
