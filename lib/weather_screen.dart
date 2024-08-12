@@ -72,6 +72,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final currentWindSpeed = currentWeatherData['wind']['speed'];
           final currentPressure = currentWeatherData['main']['pressure'];
           final currentSeaLevel = currentWeatherData['main']['sea_level'];
+          final currentFeelsLike = currentWeatherData['main']['feels_like'];
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -137,43 +138,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 //weather forecast cards -------->
 
                 const Text(
-                  'Weather Forecast',
+                  'Hourly Forecast',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      HourlyForecastItems(
-                        time: '09:00',
-                        icons: Icons.cloud,
-                        temperature: '301.17',
-                      ),
-                      HourlyForecastItems(
-                        time: '12:00',
-                        icons: Icons.sunny,
-                        temperature: '301.54',
-                      ),
-                      HourlyForecastItems(
-                        time: '15:00',
-                        icons: Icons.nightlight,
-                        temperature: '301.11',
-                      ),
-                      HourlyForecastItems(
-                        time: '18:00',
-                        icons: Icons.cloud,
-                        temperature: '301.95',
-                      ),
-                      HourlyForecastItems(
-                        time: '20:00',
-                        icons: Icons.sunny,
-                        temperature: '301.03',
-                      ),
-                      HourlyForecastItems(
-                        time: '22:00',
-                        icons: Icons.nightlight,
-                        temperature: '301.34',
-                      )
+                      for (int i = 0; i < 5; i++)
+                        HourlyForecastItems(
+                          time: data['list'][i + 1]['dt'].toString(),
+                          icons: Icons.cloud,
+                          temperature:
+                              data['list'][i + 1]['main']['temp'].toString(),
+                        ),
                     ],
                   ),
                 ),
@@ -229,9 +207,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         width: 30,
                       ),
                       AdditionalInfoItems(
-                        icon: Icons.nightlight,
-                        string: 'Night Temp',
-                        data: '23',
+                        icon: Icons.emoji_emotions,
+                        string: 'Feels Like',
+                        data: '$currentFeelsLike',
                       ),
                     ],
                   ),
