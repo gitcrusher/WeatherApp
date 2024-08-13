@@ -148,7 +148,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       for (int i = 0; i < 5; i++)
                         HourlyForecastItems(
                           time: data['list'][i + 1]['dt'].toString(),
-                          icons: Icons.cloud,
+                          icons: data['list'][i + 1]['weather'][0]['main'] ==
+                                      'Clouds' ||
+                                  data['list'][i + 1]['weather'][0]['main'] ==
+                                      'Rain'
+                              ? Icons.cloud
+                              : Icons.sunny,
                           temperature:
                               data['list'][i + 1]['main']['temp'].toString() +
                                   ' K',
