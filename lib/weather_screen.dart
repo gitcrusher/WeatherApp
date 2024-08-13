@@ -141,26 +141,49 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   'Hourly Forecast',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for (int i = 0; i < 5; i++)
-                        HourlyForecastItems(
-                          time: data['list'][i + 1]['dt'].toString(),
-                          icons: data['list'][i + 1]['weather'][0]['main'] ==
-                                      'Clouds' ||
-                                  data['list'][i + 1]['weather'][0]['main'] ==
-                                      'Rain'
-                              ? Icons.cloud
-                              : Icons.sunny,
-                          temperature:
-                              data['list'][i + 1]['main']['temp'].toString() +
-                                  ' K',
-                        ),
-                    ],
+                // SingleChildScrollView(
+                //   scrollDirection: Axis.horizontal,
+                //   child: Row(
+                //     children: [
+                //       for (int i = 0; i < 5; i++)
+                //         HourlyForecastItems(
+                //           time: data['list'][i + 1]['dt'].toString(),
+                //           icons: data['list'][i + 1]['weather'][0]['main'] ==
+                //                       'Clouds' ||
+                //                   data['list'][i + 1]['weather'][0]['main'] ==
+                //                       'Rain'
+                //               ? Icons.cloud
+                //               : Icons.sunny,
+                //           temperature:
+                //               data['list'][i + 1]['main']['temp'].toString() +
+                //                   ' K',
+                //         ),
+                //     ],
+                //   ),
+                // ),
+
+                SizedBox(
+                  height: 120,
+                  child: ListView.builder(
+                    itemCount: 5,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      final hourlyForecast = data['list'][index + 1];
+                      final hourlySky =
+                          data['list'][index + 1]['weather'][0]['main'];
+                      final hourlyTemperature =
+                          hourlyForecast['main']['temp'].toString();
+                      return HourlyForecastItems(
+                        time: hourlyForecast['dt'].toString(),
+                        temperature: hourlyTemperature,
+                        icons: hourlySky == 'Clouds' || hourlySky == 'Rain'
+                            ? Icons.cloud
+                            : Icons.sunny,
+                      );
+                    },
                   ),
                 ),
+
                 const SizedBox(
                   height: 16,
                 ),
