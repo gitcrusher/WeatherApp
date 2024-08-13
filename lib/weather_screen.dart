@@ -19,7 +19,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
       String cityName = 'London';
       final res = await http.get(
         Uri.parse(
-          'https://api.openweathermap.org/data/2.5/forecast?q=$cityName,uk&APPID=$openWeatherKey',
+          'https://api.openweathermap.org/data/2.5/forecast?q=$cityName,uk&APPID=$openWeatherAPIKey',
         ),
       );
       final data = jsonDecode(res.body);
