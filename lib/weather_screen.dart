@@ -174,7 +174,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       final hourlyTemperature =
                           hourlyForecast['main']['temp'].toString();
                       return HourlyForecastItems(
-                        time: hourlyForecast['dt'].toString(),
+                        time: hourlyForecast['dt_txt'].toString(),
                         temperature: hourlyTemperature,
                         icons: hourlySky == 'Clouds' || hourlySky == 'Rain'
                             ? Icons.cloud
